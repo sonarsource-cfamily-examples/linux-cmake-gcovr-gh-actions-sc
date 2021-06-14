@@ -1,3 +1,10 @@
+= SonarCloud Analysis with GitHub Actions
+
+This is an example GitHub Action that runs a Linux-based CMake build and a SonarCloud analysis.
+You can see the results of the analysis https://sonarcloud.io/dashboard?id=sc-sq-c-family-examples_linux-cmake-gh-actions-sc[on SonarCloud].
+
+You can find the GitHub Action in link:.github/workflows/build.yml[build.yml]
+
 = Linux\CMake
 
 A build of the https://github.com/sc-sq-c-family-examples/code[code repository] on a Linux platform using CMake build system.
