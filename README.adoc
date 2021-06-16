@@ -2,7 +2,9 @@
 // URIs:
 :uri-qg-status: https://sonarcloud.io/dashboard?id=sc-sq-c-family-examples_linux-cmake-gh-actions-sc
 :img-qg-status: https://sonarcloud.io/api/project_badges/measure?project=sc-sq-c-family-examples_linux-cmake-gh-actions-sc&metric=alert_status
+:img-build-status: https://github.com/sc-sq-c-family-examples/linux-cmake-gh-actions-sc/actions/workflows/build.yml/badge.svg
 
+image:{img-build-status}[Build Status]
 image:{img-qg-status}[Quality Gate Status,link={uri-qg-status}]
 
 *This project is analysed on https://sonarcloud.io/dashboard?id=sc-sq-c-family-examples_linux-cmake-gh-actions-sc[SonarCloud]!*
