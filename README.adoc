@@ -1,3 +1,28 @@
+= C++ example project scanned on SonarCloud using GitHub Actions
+// URIs:
+:uri-qg-status: https://sonarcloud.io/dashboard?id=sc-sq-c-family-examples_linux-cmake-gh-actions-sc
+:img-qg-status: https://sonarcloud.io/api/project_badges/measure?project=sc-sq-c-family-examples_linux-cmake-gh-actions-sc&metric=alert_status
+
+image:{img-qg-status}[Quality Gate Status,link={uri-qg-status}]
+
+*This project is analysed on https://sonarcloud.io/dashboard?id=sc-sq-c-family-examples_linux-cmake-gh-actions-sc[SonarCloud]!*
+
+It is very easy to analyze a C/C++/Objective-C project with SonarCloud:
+
+. Create a `sonar-project.properties` file to store your configuration
+. In your `.github/workflows/build.yml` file:
+.. Download the https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/[Sonar Scanner]
+.. Download the https://docs.sonarqube.org/latest/analysis/languages/cfamily/#header-4[Build Wrapper]
+.. Wrap your compilation with the Build Wrapper
+.. Run `sonar-scanner` as the final step
+
+You can take a look at the link:sonar-project.properties[sonar-project.properties] and link:.github/workflows/build.yml[build.yml] to see it in practice.
+
+= Documentation
+
+- https://docs.sonarqube.org/latest/analysis/languages/cfamily/[Documentation of the C/C++/Objective-C plugin and its Build Wrapper]
+-  https://sonarcloud.io/documentation/getting-started/github/[Documentation of using SonarCloud with GitHub]
+
 = Linux\CMake
 
 A build of the https://github.com/sc-sq-c-family-examples/code[code repository] on a Linux platform using CMake build system.
