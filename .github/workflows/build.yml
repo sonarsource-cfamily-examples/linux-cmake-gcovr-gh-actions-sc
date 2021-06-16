@@ -10,8 +10,9 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     env:
-      SONAR_SCANNER_VERSION: 4.4.0.2170 # Find the latest version in the "Linux" link on this page:
+      SONAR_SCANNER_VERSION: 4.6.1.2450 # Find the latest version in the "Linux" link on this page:
                                         # https://sonarcloud.io/documentation/analysis/scan/sonarscanner/
+      SONAR_SERVER_URL: "https://sonarcloud.io"
     steps:
       - uses: actions/checkout@v2
         with:
@@ -27,26 +28,30 @@ jobs:
           key: ${{ runner.os }}-sonar
           restore-keys: ${{ runner.os }}-sonar
       - name: Download sonar-scanner
+        env:
+          SONAR_SCANNER_DOWNLOAD_URL: https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${{ env.SONAR_SCANNER_VERSION }}-linux.zip
         run: |
           mkdir -p $HOME/.sonar
-          curl -sSLo $HOME/.sonar/sonar-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-$SONAR_SCANNER_VERSION-linux.zip 
+          curl -sSLo $HOME/.sonar/sonar-scanner.zip ${{ env.SONAR_SCANNER_DOWNLOAD_URL }} 
           unzip -o $HOME/.sonar/sonar-scanner.zip -d $HOME/.sonar/
+          echo "$HOME/.sonar/sonar-scanner-${{ env.SONAR_SCANNER_VERSION }}-linux/bin" >> $GITHUB_PATH
       - name: Download build-wrapper
+        env:
+          BUILD_WRAPPER_DOWNLOAD_URL: ${{ env.SONAR_SERVER_URL }}/static/cpp/build-wrapper-linux-x86.zip
         run: |
-          curl -sSLo $HOME/.sonar/build-wrapper-linux-x86.zip https://sonarcloud.io/static/cpp/build-wrapper-linux-x86.zip
+          curl -sSLo $HOME/.sonar/build-wrapper-linux-x86.zip ${{ env.BUILD_WRAPPER_DOWNLOAD_URL }}
           unzip -o $HOME/.sonar/build-wrapper-linux-x86.zip -d $HOME/.sonar/
+          echo "$HOME/.sonar/build-wrapper-linux-x86" >> $GITHUB_PATH
       - name: Run build-wrapper
         run: |
-          rm -rf build && mkdir build
+          mkdir build
           cmake -S . -B build
-          export PATH=$HOME/.sonar/build-wrapper-linux-x86:$PATH
           build-wrapper-linux-x86-64 --out-dir build_wrapper_output_directory cmake --build build/ --config Release
       - name: Run sonar-scanner
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_ARGS: "--define sonar.projectVersion=1.0 --define sonar.sources=src --define sonar.cfamily.build-wrapper-output=build_wrapper_output_directory --define sonar.sourceEncoding=UTF-8"  
         run: |
-          export PATH=$HOME/.sonar/sonar-scanner-$SONAR_SCANNER_VERSION-linux/bin:$PATH
-          SONAR_ARGS="-Dsonar.projectVersion=1.0 -Dsonar.sources=src -Dsonar.cfamily.build-wrapper-output=build_wrapper_output_directory -Dsonar.sourceEncoding=UTF-8"
-          sonar-scanner -Dsonar.host.url="https://sonarcloud.io" ${SONAR_ARGS}
+          sonar-scanner --define sonar.host.url="${{ env.SONAR_SERVER_URL }}" ${{ env.SONAR_ARGS }}
 
