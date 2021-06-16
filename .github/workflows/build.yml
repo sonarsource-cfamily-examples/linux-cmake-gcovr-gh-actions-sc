@@ -10,7 +10,8 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     env:
-      SONAR_SCANNER_VERSION: 4.4.0.2170
+      SONAR_SCANNER_VERSION: 4.4.0.2170 # Find the latest version in the "Linux" link on this page:
+                                        # https://sonarcloud.io/documentation/analysis/scan/sonarscanner/
     steps:
       - uses: actions/checkout@v2
         with:

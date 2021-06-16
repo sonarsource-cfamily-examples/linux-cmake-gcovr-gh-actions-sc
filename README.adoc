@@ -21,6 +21,7 @@ You can take a look at the link:sonar-project.properties[sonar-project.propertie
 = Documentation
 
 - https://docs.sonarqube.org/latest/analysis/languages/cfamily/[Documentation of the C/C++/Objective-C plugin and its Build Wrapper]
+-  https://sonarcloud.io/documentation/getting-started/github/[Documentation of using SonarCloud with GitHub]
 
 = Linux\CMake
 
