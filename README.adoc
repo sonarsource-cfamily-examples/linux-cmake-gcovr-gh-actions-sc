@@ -18,13 +18,14 @@ It is very easy to analyze a C/C++/Objective-C project with SonarCloud:
 .. Download the https://docs.sonarqube.org/latest/analysis/languages/cfamily/#header-4[Build Wrapper]
 .. Wrap your compilation with the Build Wrapper
 .. Run `sonar-scanner` as the final step
+. Make sure that you have your token stored as a secret in your repository (`SONAR_TOKEN`). You can request new tokens using https://sonarcloud.io/account/security/[Account/Security page].
 
 You can take a look at the link:sonar-project.properties[sonar-project.properties] and link:.github/workflows/build.yml[build.yml] to see it in practice.
 
 = Documentation
 
 - https://docs.sonarqube.org/latest/analysis/languages/cfamily/[Documentation of the C/C++/Objective-C plugin and its Build Wrapper]
--  https://sonarcloud.io/documentation/getting-started/github/[Documentation of using SonarCloud with GitHub]
+- https://sonarcloud.io/documentation/getting-started/github/[Documentation of using SonarCloud with GitHub]
 
 = Linux\CMake
 
