@@ -5,8 +5,8 @@ on:
       - main
   pull_request:
     types: [opened, synchronize, reopened]
-  schedule:
-    - cron: '*/5 * * * *'
+  schedule:                # This trigger is here only to make sure
+    - cron: '17 * * * SUN' # the example itself doesn't become stale
 jobs:
   build:
     name: Build
