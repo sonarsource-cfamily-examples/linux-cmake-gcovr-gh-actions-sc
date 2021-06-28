@@ -10,6 +10,9 @@ image:{img-qg-status}[Quality Gate Status,link={uri-qg-status}]
 
 *This project is analysed on https://sonarcloud.io/dashboard?id=sonarsource-cfamily-examples_linux-cmake-gh-actions-sc[SonarCloud]!*
 
+:note-caption: :information_source:
+NOTE: This simple example ignores https://sonarcloud.io/documentation/analysis/languages/cfamily/#analysis-cache[analysis cache] and https://sonarcloud.io/documentation/analysis/languages/cfamily/#multithreaded-code-scan[multithreaded execution] both of which can boost analysis significantly.
+
 It is very easy to analyze a C, C++ and Objective-C project with SonarCloud:
 
 . Create a `sonar-project.properties` file to store your configuration
@@ -26,6 +29,9 @@ You can take a look at the link:sonar-project.properties[sonar-project.propertie
 
 - https://sonarcloud.io/documentation/analysis/languages/cfamily/[Documentation of the C, C++ and Objective-C plugin and its Build Wrapper]
 - https://sonarcloud.io/documentation/getting-started/github/[Documentation of using SonarCloud with GitHub]
+- https://sonarcloud.io/documentation/analysis/languages/cfamily/#analysis-cache[Configuring C, C++ and Objective-C analysis cache]
+- https://sonarcloud.io/documentation/analysis/languages/cfamily/#multithreaded-code-scan[Configuring multithreaded execution]
+- https://sonarcloud.io/documentation/analysis/languages/cfamily/#analysis-steps-using-compilation-database[Using compilation database (compile_commands.json)]
 
 = Linux\CMake
 
