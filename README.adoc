@@ -10,7 +10,7 @@ image:{img-qg-status}[Quality Gate Status,link={uri-qg-status}]
 
 *This project is analysed on https://sonarcloud.io/dashboard?id=sonarsource-cfamily-examples_linux-cmake-gh-actions-sc[SonarCloud]!*
 
-It is very easy to analyze a C/C++/Objective-C project with SonarCloud:
+It is very easy to analyze a C, C++ and Objective-C project with SonarCloud:
 
 . Create a `sonar-project.properties` file to store your configuration
 . In your `.github/workflows/build.yml` file:
@@ -24,7 +24,7 @@ You can take a look at the link:sonar-project.properties[sonar-project.propertie
 
 = Documentation
 
-- https://sonarcloud.io/documentation/analysis/languages/cfamily/[Documentation of the C/C++/Objective-C plugin and its Build Wrapper]
+- https://sonarcloud.io/documentation/analysis/languages/cfamily/[Documentation of the C, C++ and Objective-C plugin and its Build Wrapper]
 - https://sonarcloud.io/documentation/getting-started/github/[Documentation of using SonarCloud with GitHub]
 
 = Linux\CMake
