@@ -1,1 +1,1 @@
-manual Apr 7
+another manual, now with correct committer Apr 7
