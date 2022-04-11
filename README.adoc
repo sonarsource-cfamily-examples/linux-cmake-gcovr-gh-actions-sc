@@ -11,14 +11,14 @@ image:{img-qg-status}[Quality Gate Status,link={uri-qg-status}]
 *This project is analysed on https://sonarcloud.io/dashboard?id=sonarsource-cfamily-examples_linux-cmake-gh-actions-sc[SonarCloud]!*
 
 :note-caption: :information_source:
-NOTE: This simple example ignores https://sonarcloud.io/documentation/analysis/languages/cfamily/#analysis-cache[analysis cache] and https://sonarcloud.io/documentation/analysis/languages/cfamily/#multithreaded-code-scan[multithreaded execution] both of which can boost analysis significantly.
+NOTE: This simple example ignores https://docs.sonarcloud.io/advanced-setup/languages/c-c-objective-c/#analysis-cache[analysis cache] and https://docs.sonarcloud.io/advanced-setup/languages/c-c-objective-c/#parallel-code-scan[multithreaded execution] both of which can boost analysis significantly.
 
-It is very easy to analyze a C, C++ and Objective-C project with SonarCloud:
+It is very easy to analyze a C, C++ and Objective-C project with SonarCloud and https://docs.sonarcloud.io/getting-started/github/[GitHub Actions]:
 
 . Create a `sonar-project.properties` file to store your configuration
 . In your `.github/workflows/build.yml` file:
-.. Download the https://sonarcloud.io/documentation/analysis/scan/sonarscanner/[Sonar Scanner]
-.. Download the https://sonarcloud.io/documentation/analysis/languages/cfamily/#analysis-steps-using-build-wrapper[Build Wrapper]
+.. Download the https://docs.sonarcloud.io/advanced-setup/ci-based-analysis/sonarscanner-cli/[Sonar Scanner]
+.. Download the https://docs.sonarcloud.io/advanced-setup/languages/c-c-objective-c/#analysis-steps-using-build-wrapper[Build Wrapper]
 .. Wrap your compilation with the Build Wrapper
 .. Run `sonar-scanner` as the final step
 . Make sure that you have your token stored as a secret in your repository (`SONAR_TOKEN`). You can request new tokens using https://sonarcloud.io/account/security/[Account/Security page].
@@ -27,11 +27,11 @@ You can take a look at the link:sonar-project.properties[sonar-project.propertie
 
 = Documentation
 
-- https://sonarcloud.io/documentation/analysis/languages/cfamily/[Documentation of the C, C++ and Objective-C plugin and its Build Wrapper]
-- https://sonarcloud.io/documentation/getting-started/github/[Documentation of using SonarCloud with GitHub]
-- https://sonarcloud.io/documentation/analysis/languages/cfamily/#analysis-cache[Configuring C, C++ and Objective-C analysis cache]
-- https://sonarcloud.io/documentation/analysis/languages/cfamily/#multithreaded-code-scan[Configuring multithreaded execution]
-- https://sonarcloud.io/documentation/analysis/languages/cfamily/#analysis-steps-using-compilation-database[Using compilation database (compile_commands.json)]
+- https://docs.sonarcloud.io/advanced-setup/languages/c-c-objective-c/[Documentation of the C, C++ and Objective-C plugin and its Build Wrapper]
+- https://docs.sonarcloud.io/getting-started/github/[Documentation of using SonarCloud with GitHub]
+- https://docs.sonarcloud.io/advanced-setup/languages/c-c-objective-c/#analysis-cache[Configuring C, C++ and Objective-C analysis cache]
+- https://docs.sonarcloud.io/advanced-setup/languages/c-c-objective-c/#parallel-code-scan[Configuring multithreaded execution]
+- https://docs.sonarcloud.io/advanced-setup/languages/c-c-objective-c/#analysis-steps-using-compilation-database[Using compilation database (compile_commands.json)]
 
 = Linux\CMake
 
