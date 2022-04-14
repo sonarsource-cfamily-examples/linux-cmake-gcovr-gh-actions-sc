@@ -1,14 +1,14 @@
 = C++ example project scanned on SonarCloud using GitHub Actions
 // URIs:
-:uri-qg-status: https://sonarcloud.io/dashboard?id=sonarsource-cfamily-examples_linux-cmake-gh-actions-sc
-:img-qg-status: https://sonarcloud.io/api/project_badges/measure?project=sonarsource-cfamily-examples_linux-cmake-gh-actions-sc&metric=alert_status
-:uri-build-status: https://github.com/sonarsource-cfamily-examples/linux-cmake-gh-actions-sc/actions/workflows/build.yml
-:img-build-status: https://github.com/sonarsource-cfamily-examples/linux-cmake-gh-actions-sc/actions/workflows/build.yml/badge.svg
+:uri-qg-status: https://sonarcloud.io/dashboard?id=sonarsource-cfamily-examples_linux-cmake-gcovr-gh-actions-sc
+:img-qg-status: https://sonarcloud.io/api/project_badges/measure?project=sonarsource-cfamily-examples_linux-cmake-gcovr-gh-actions-sc&metric=alert_status
+:uri-build-status: https://github.com/sonarsource-cfamily-examples/linux-cmake-gcovr-gh-actions-sc/actions/workflows/build.yml
+:img-build-status: https://github.com/sonarsource-cfamily-examples/linux-cmake-gcovr-gh-actions-sc/actions/workflows/build.yml/badge.svg
 
 image:{img-build-status}[Build Status, link={uri-build-status}]
 image:{img-qg-status}[Quality Gate Status,link={uri-qg-status}]
 
-*This project is analysed on https://sonarcloud.io/dashboard?id=sonarsource-cfamily-examples_linux-cmake-gh-actions-sc[SonarCloud]!*
+*This project is analysed on https://sonarcloud.io/dashboard?id=sonarsource-cfamily-examples_linux-cmake-gcovr-gh-actions-sc[SonarCloud]!*
 
 :note-caption: :information_source:
 NOTE: This simple example ignores https://docs.sonarcloud.io/advanced-setup/languages/c-c-objective-c/#analysis-cache[analysis cache] and https://docs.sonarcloud.io/advanced-setup/languages/c-c-objective-c/#parallel-code-scan[multithreaded execution] both of which can boost analysis significantly.
