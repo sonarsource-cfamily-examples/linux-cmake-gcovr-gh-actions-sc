@@ -13,7 +13,7 @@ image:{img-qg-status}[Quality Gate Status,link={uri-qg-status}]
 :note-caption: :information_source:
 NOTE: This simple example ignores https://docs.sonarcloud.io/advanced-setup/languages/c-c-objective-c/#analysis-cache[analysis cache] and https://docs.sonarcloud.io/advanced-setup/languages/c-c-objective-c/#parallel-code-scan[multithreaded execution] both of which can boost analysis significantly.
 
-It is very easy to analyze a C, C++ and Objective-C project (and compute its test coverage) with SonarCloud and https://docs.sonarcloud.io/getting-started/github/[GitHub Actions]:
+It is very easy to analyze a C, C++ and Objective-C project and compute its *test coverage* with SonarCloud and https://docs.sonarcloud.io/getting-started/github/[GitHub Actions]:
 
 . Create a `sonar-project.properties` file to store your configuration
 . In your `.github/workflows/build.yml` file:
