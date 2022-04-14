@@ -62,7 +62,7 @@ jobs:
           ./build/coverage_test2
       - name: Collect coverage
         run: |
-          gcovr --coverage > coverage.xml
+          gcovr --sonarqube > coverage.xml
       - name: Run sonar-scanner
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
