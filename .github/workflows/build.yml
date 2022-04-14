@@ -60,7 +60,7 @@ jobs:
         run: |
           ./build/coverage_test1
           ./build/coverage_test2
-      - name: Collect coverage
+      - name: Collect coverage into one XML report
         run: |
           gcovr --sonarqube > coverage.xml
       - name: Run sonar-scanner

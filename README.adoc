@@ -1,4 +1,4 @@
-= C++ example project scanned on SonarCloud using GitHub Actions
+= C++ example project scanned on SonarCloud with test coverage using GitHub Actions
 // URIs:
 :uri-qg-status: https://sonarcloud.io/dashboard?id=sonarsource-cfamily-examples_linux-cmake-gcovr-gh-actions-sc
 :img-qg-status: https://sonarcloud.io/api/project_badges/measure?project=sonarsource-cfamily-examples_linux-cmake-gcovr-gh-actions-sc&metric=alert_status
@@ -13,14 +13,19 @@ image:{img-qg-status}[Quality Gate Status,link={uri-qg-status}]
 :note-caption: :information_source:
 NOTE: This simple example ignores https://docs.sonarcloud.io/advanced-setup/languages/c-c-objective-c/#analysis-cache[analysis cache] and https://docs.sonarcloud.io/advanced-setup/languages/c-c-objective-c/#parallel-code-scan[multithreaded execution] both of which can boost analysis significantly.
 
-It is very easy to analyze a C, C++ and Objective-C project with SonarCloud and https://docs.sonarcloud.io/getting-started/github/[GitHub Actions]:
+It is very easy to analyze a C, C++ and Objective-C project (and compute its test coverage) with SonarCloud and https://docs.sonarcloud.io/getting-started/github/[GitHub Actions]:
 
 . Create a `sonar-project.properties` file to store your configuration
 . In your `.github/workflows/build.yml` file:
+.. Make sure you have gcovr v5.0 (v5.1 is not supported, see https://jira.sonarsource.com/browse/SONAR-16269[SONAR-16269])
 .. Download the https://docs.sonarcloud.io/advanced-setup/ci-based-analysis/sonarscanner-cli/[Sonar Scanner]
 .. Download the https://docs.sonarcloud.io/advanced-setup/languages/c-c-objective-c/#analysis-steps-using-build-wrapper[Build Wrapper]
 .. Wrap your compilation with the Build Wrapper
+* add `--coverage` compilation flag to instrument the binaries
+.. Run the test binaries to count covered lines
+.. Run `gcovr --sonarqube` to produce the SonarCloud-compatible XML coverage report
 .. Run `sonar-scanner` as the final step
+* Point the `sonar.coverageReportPaths` property to the generated coverage-report file
 . Make sure that you have your token stored as a secret in your repository (`SONAR_TOKEN`). You can request new tokens using https://sonarcloud.io/account/security/[Account/Security page].
 
 You can take a look at the link:sonar-project.properties[sonar-project.properties] and link:.github/workflows/build.yml[build.yml] to see it in practice.
