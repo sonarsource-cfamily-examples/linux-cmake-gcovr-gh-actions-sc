@@ -1,4 +1,4 @@
-= C++ example project scanned on SonarCloud with test coverage using GitHub Actions
+= C++ example project for generating test coverage with gcovr
 // URIs:
 :uri-qg-status: https://sonarcloud.io/dashboard?id=sonarsource-cfamily-examples_linux-cmake-gcovr-gh-actions-sc
 :img-qg-status: https://sonarcloud.io/api/project_badges/measure?project=sonarsource-cfamily-examples_linux-cmake-gcovr-gh-actions-sc&metric=alert_status
@@ -8,25 +8,19 @@
 image:{img-build-status}[Build Status, link={uri-build-status}]
 image:{img-qg-status}[Quality Gate Status,link={uri-qg-status}]
 
-*This project is analysed on https://sonarcloud.io/dashboard?id=sonarsource-cfamily-examples_linux-cmake-gcovr-gh-actions-sc[SonarCloud]!*
+* The test coverage shown here works on both SonarQube and SonarCloud. This project is analysed on https://sonarcloud.io/dashboard?id=sonarsource-cfamily-examples_linux-cmake-gcovr-gh-actions-sc[SonarCloud]!*
 
 :note-caption: :information_source:
-NOTE: This simple example ignores https://docs.sonarcloud.io/advanced-setup/languages/c-c-objective-c/#analysis-cache[analysis cache] and https://docs.sonarcloud.io/advanced-setup/languages/c-c-objective-c/#parallel-code-scan[multithreaded execution] both of which can boost analysis significantly.
+NOTE: This simple example aims at demonstrating code coverage in action. It explains how to add coverage on a project for which the analysis is already configured. Analysis https://github.com/orgs/sonarsource-cfamily-examples/repositories?language=&page=1&q=topic%3Aconfiguration&sort=&type=all[configuration examples] are available here. +
+Adding code coverage is done the same way regardless of whether you use the Build Wrapper or a Compilation Database to configure the analysis.
 
-It is very easy to analyze a C, C++ and Objective-C project and compute its *test coverage* with SonarCloud and https://docs.sonarcloud.io/getting-started/github/[GitHub Actions]:
+To get coverage and feed it to the sonar-scanner, use the following procedure.
 
-. Create a `sonar-project.properties` file to store your configuration
-. In your `.github/workflows/build.yml` file:
-.. Make sure you have gcovr v5.0 (v5.1 is not supported, see https://jira.sonarsource.com/browse/SONAR-16269[SONAR-16269])
-.. Download the https://docs.sonarcloud.io/advanced-setup/ci-based-analysis/sonarscanner-cli/[Sonar Scanner]
-.. Download the https://docs.sonarcloud.io/advanced-setup/languages/c-c-objective-c/#analysis-steps-using-build-wrapper[Build Wrapper]
-.. Wrap your compilation with the Build Wrapper
-* add `--coverage` compilation flag to instrument the binaries
-.. Run the test binaries to count covered lines
-.. Run `gcovr --sonarqube` to produce the SonarCloud-compatible XML coverage report
-.. Run `sonar-scanner` as the final step
-* Point the `sonar.coverageReportPaths` property to the generated coverage-report file
-. Make sure that you have your token stored as a secret in your repository (`SONAR_TOKEN`). You can request new tokens using https://sonarcloud.io/account/security/[Account/Security page].
+. Add `--coverage` compilation flag to instrument the binaries
+. Run the test binaries to count covered lines
+. Run `gcovr --sonarqube` to produce the SonarCloud-compatible XML coverage report
+. Point the `sonar.coverageReportPaths` property to the generated coverage-report file
+. Run `sonar-scanner` as the final step
 
 You can take a look at the link:sonar-project.properties[sonar-project.properties] and link:.github/workflows/build.yml[build.yml] to see it in practice.
 
@@ -37,17 +31,6 @@ You can take a look at the link:sonar-project.properties[sonar-project.propertie
 - https://docs.sonarcloud.io/advanced-setup/languages/c-c-objective-c/#analysis-cache[Configuring C, C++ and Objective-C analysis cache]
 - https://docs.sonarcloud.io/advanced-setup/languages/c-c-objective-c/#parallel-code-scan[Configuring multithreaded execution]
 - https://docs.sonarcloud.io/advanced-setup/languages/c-c-objective-c/#analysis-steps-using-compilation-database[Using compilation database (compile_commands.json)]
-
-= Linux\CMake
-
-A build of the https://github.com/sonarsource-cfamily-examples/code[code repository] on a Linux platform using CMake build system.
-
-To build the code run:
-----
-mkdir build && cd build
-cmake ..
-make
-----
 
 = Code Description
 
