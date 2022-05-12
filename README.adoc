@@ -18,7 +18,7 @@ To get coverage and feed it to the sonar-scanner, use the following procedure.
 
 . Add `--coverage` compilation flag to instrument the binaries
 . Run the test binaries to count covered lines
-. Run `gcovr --sonarqube` to produce the SonarCloud-compatible XML coverage report
+. Run `gcovr --sonarqube` to produce the SonarQube- and SonarCloud-compatible XML coverage report
 . Point the `sonar.coverageReportPaths` property to the generated coverage-report file
 . Run `sonar-scanner` as the final step
 
