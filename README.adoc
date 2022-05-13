@@ -11,7 +11,7 @@ image:{img-qg-status}[Quality Gate Status,link={uri-qg-status}]
 *The test coverage shown here works on both SonarQube and SonarCloud. This project is analyzed on https://sonarcloud.io/dashboard?id=sonarsource-cfamily-examples_linux-cmake-gcovr-gh-actions-sc[SonarCloud]!*
 
 :note-caption: :information_source:
-NOTE: This simple example aims at demonstrating code coverage in action. It explains how to add coverage on a project for which the analysis is already configured. Analysis https://github.com/orgs/sonarsource-cfamily-examples/repositories?language=&page=1&q=topic%3Aconfiguration&sort=&type=all[configuration examples] are available here. +
+NOTE: This simple example aims at demonstrating code coverage in action. It explains how to add coverage on a project for which the analysis is already configured. Analysis configuration examples are available <<examples_section,here>>. +
 Adding code coverage is done the same way regardless of whether you use the Build Wrapper or a Compilation Database to configure the analysis.
 
 To get coverage and feed it to the sonar-scanner, use the following procedure.
@@ -32,7 +32,7 @@ You can take a look at the link:sonar-project.properties[sonar-project.propertie
 - https://docs.sonarcloud.io/advanced-setup/languages/c-c-objective-c/#parallel-code-scan[Configuring multithreaded execution]
 - https://docs.sonarcloud.io/advanced-setup/languages/c-c-objective-c/#analysis-steps-using-compilation-database[Using compilation database (compile_commands.json)]
 
-= Code Description
+= Code Description [[examples_section]]
 
 An example of a flawed C++ code. The https://github.com/sonarsource-cfamily-examples/code[code repository] is meant to be compiled with different build systems using different CI pipelines on Linux, MacOS, and Windows.
 
