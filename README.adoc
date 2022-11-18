@@ -31,6 +31,7 @@ You can take a look at the link:sonar-project.properties[sonar-project.propertie
 - https://docs.sonarcloud.io/advanced-setup/languages/c-c-objective-c/#analysis-cache[Configuring C, C++ and Objective-C analysis cache]
 - https://docs.sonarcloud.io/advanced-setup/languages/c-c-objective-c/#parallel-code-scan[Configuring multithreaded execution]
 - https://docs.sonarcloud.io/advanced-setup/languages/c-c-objective-c/#analysis-steps-using-compilation-database[Using compilation database (compile_commands.json)]
+- https://docs.sonarcloud.io/advanced-setup/ci-based-analysis/github-actions-for-sonarcloud/[GitHub Action for C and C++ usage]
 
 = Code Description
 
