@@ -26,11 +26,10 @@ You can take a look at the link:sonar-project.properties[sonar-project.propertie
 
 = Documentation
 
-- https://docs.sonarcloud.io/advanced-setup/languages/c-c-objective-c/[Documentation of the C, C++ and Objective-C plugin and its Build Wrapper]
+- https://docs.sonarcloud.io/advanced-setup/languages/c-c-objective-c/[Documentation overview of the C, C++ and Objective-C analyzer]
 - https://docs.sonarcloud.io/getting-started/github/[Documentation of using SonarCloud with GitHub]
-- https://docs.sonarcloud.io/advanced-setup/languages/c-c-objective-c/#analysis-cache[Configuring C, C++ and Objective-C analysis cache]
-- https://docs.sonarcloud.io/advanced-setup/languages/c-c-objective-c/#parallel-code-scan[Configuring multithreaded execution]
-- https://docs.sonarcloud.io/advanced-setup/languages/c-c-objective-c/#analysis-steps-using-compilation-database[Using compilation database (compile_commands.json)]
+- https://docs.sonarcloud.io/advanced-setup/languages/c-family/prerequisites/#generating-a-compilation-database[Generating a compilation database (compile_commands.json)]
+- https://docs.sonarsource.com/sonarcloud/advanced-setup/languages/c-family/running-the-analysis/[Running the analysis in Compilation Database mode]
 - https://docs.sonarcloud.io/advanced-setup/ci-based-analysis/github-actions-for-sonarcloud/[GitHub Action for C and C++ usage]
 
 = Code Description
